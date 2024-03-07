@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 
 const Child = ({name, urlImg, allClothes }) => {
     return <>
-            <Col xs={12} md={6} className="text-center">
+            <Col xs={12} md={6}>
                 <Image src={urlImg} roundedCircle />
                 <div>{name}</div>
                 <ul className="list">

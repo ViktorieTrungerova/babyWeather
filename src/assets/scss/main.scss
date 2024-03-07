@@ -1,11 +1,25 @@
 .header {
-  margin-left: auto;
-  display: flex;
-  justify-content: flex-end;
-
-  background-color: gray;
+  background-color: silver;
 
     a {
-      margin: 5px;
+      margin: 0.313rem;
     }
+
+  &__wrapper {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.weatherCard {
+  width: 18rem;
+  margin: 1.25rem auto;
+}
+
+.addChildForm {
+  button {
+    display: flex;
+    margin-left: auto;
+  }
 }
