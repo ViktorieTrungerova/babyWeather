@@ -27,7 +27,6 @@ function AddChildForm() {
                         required
                         type="text"
                         placeholder="First name"
-                        defaultValue="Mark"
                     />
                 </Form.Group>
             </Row>

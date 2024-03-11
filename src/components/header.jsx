@@ -9,7 +9,7 @@ const Header = () => {
                 <Row>
                     <Col className="header__wrapper">
                         <a href="http://localhost:5173" alt="Home">Home</a>
-                        <a href="http://localhost:5173/settings" alt="Settings">Setting</a>
+                        <a href="http://localhost:5173/settings" alt="Settings">Settings</a>
                     </Col>
                 </Row>
             </Container>
