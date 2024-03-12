@@ -15,11 +15,54 @@
 .weatherCard {
   width: 18rem;
   margin: 1.25rem auto;
+  text-align: center;
+
+  .card-body {
+    cursor: pointer;
+  }
+
+  img {
+    width: 60%;
+  }
+
+  &:hover {
+    border: 1px solid blue;
+  }
 }
 
 .addChildForm {
   button {
     display: flex;
     margin-left: auto;
+  }
+}
+
+.child {
+  text-align: center;
+
+  &__name {
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+}
+
+.clothes {
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+  img {
+    max-height: 3.75rem;
+  }
+}
+
+.weatherForecast {
+  li {
+    display: inline-block;
+    list-style-type: none;
+    cursor: pointer;
+  }
+  li:hover {
+    border: 1px solid blue;
   }
 }

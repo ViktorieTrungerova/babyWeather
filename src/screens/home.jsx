@@ -5,6 +5,7 @@ import Child from "../components/child.jsx";
 import Weather from "../components/weather.jsx";
 import {weatherApi} from "../weatherApiClient.jsx";
 import {determinator} from "../model/clothesDeterminer.jsx";
+import WeatherForecast from "../components/weatherForecast.jsx";
 
 
 const Home = () => {
@@ -13,6 +14,8 @@ const Home = () => {
         {name: 'Eliska', age: 3},
         {name: 'Filip', age: 0},
     ]);
+    const [selectedWeatherIndex, setSelectedWeatherIndex] = useState(0)
+    const [weatherForecast, setWeatherForecast] = useState(false);
 
     useEffect(() => {
         const loadData = async () => {
@@ -20,6 +23,10 @@ const Home = () => {
         }
         loadData()
     }, [])
+
+    const selectForecast = (index) => {
+        setSelectedWeatherIndex(index);
+    };
 
 
     console.log(weather, 'data')
@@ -31,15 +38,17 @@ const Home = () => {
                     : <>
                         <Header />
                         <Container>
+                            {weatherForecast && <WeatherForecast weatherForecastHourly={weather.hourly} onClickForecast={selectForecast}/>}
                             <Weather
-                                temperature={Math.round(weather.current.temp - 275.15)}
-                                describe={weather.current.weather[0].description}
-                                feelsLike={Math.round(weather.current.feels_like - 275.15)}
-                                place="Hostalkova" icon={`https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`}/>
+                                onClickWeatherForecast={() => (setWeatherForecast(!weatherForecast))}
+                                temperature={Math.round(weather.hourly[selectedWeatherIndex].temp - 275.15)}
+                                describe={weather.hourly[selectedWeatherIndex].weather[0].description}
+                                feelsLike={Math.round(weather.hourly[selectedWeatherIndex].feels_like - 275.15)}
+                                place="Hostalkova" icon={`https://openweathermap.org/img/wn/${weather.hourly[selectedWeatherIndex].weather[0].icon}@2x.png`}/>
                             <Row>
                                 {children.map((child, key) => {
                                     const clothes = determinator.getSuitableClothes(
-                                        Math.round(weather.current.temp - 275.15),
+                                        Math.round(weather.hourly[selectedWeatherIndex].temp - 275.15),
                                         child.age,
                                     )
                                     return <Child key={key} name={child.name} urlImg="https://placehold.jp/150x150.png" allClothes={clothes} />;

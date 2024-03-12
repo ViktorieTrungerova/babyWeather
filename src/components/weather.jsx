@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Card from 'react-bootstrap/Card';
 
-const Weather = ({temperature, feelsLike, icon, describe, place}) => {
+const Weather = ({temperature, feelsLike, icon, describe, place, onClickWeatherForecast}) => {
+
     return <>
         <Card className='weatherCard'>
-            <Card.Body>
+            <Card.Body onClick={onClickWeatherForecast}>
                 <Card.Img variant="top" src={icon} />
                 <Card.Title>{temperature} °C</Card.Title>
                 <Card.Text>
