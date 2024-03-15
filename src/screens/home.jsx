@@ -6,20 +6,19 @@ import Weather from "../components/weather.jsx";
 import {weatherApi} from "../weatherApiClient.jsx";
 import {determinator} from "../model/clothesDeterminer.jsx";
 import WeatherForecast from "../components/weatherForecast.jsx";
+import {supabaseApi} from "../supabaseApiClient.jsx";
 
 
 const Home = () => {
     const [weather, setWeather] = useState(null);
-    const [children] = useState([
-        {name: 'Eliska', age: 3},
-        {name: 'Filip', age: 0},
-    ]);
+    const [children, setChildren] = useState([]);
     const [selectedWeatherIndex, setSelectedWeatherIndex] = useState(0)
     const [weatherForecast, setWeatherForecast] = useState(false);
 
     useEffect(() => {
         const loadData = async () => {
             weatherApi.getData().then(data => setWeather(data))
+            supabaseApi.getChildren().then(data => setChildren(data))
         }
         loadData()
     }, [])
