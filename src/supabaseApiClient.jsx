@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient("https://vyttcsvuowjqhnpxolks.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dHRjc3Z1b3dqcWhucHhvbGtzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAzMjkyNDAsImV4cCI6MjAyNTkwNTI0MH0.JKbgpvUXsbVSkrNDgSL0wY9B6QJJ7Q6tvAQKybH4XXU");
+const supabase = createClient("https://ypzmmkeqnongjbcbglad.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlwem1ta2Vxbm9uZ2piY2JnbGFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MTM4MzQsImV4cCI6MjAyNjA4OTgzNH0.DqGMKpBjVm-uCtOhGKIU9B45b27Mn-Xt0IVuoDpAA20");
 
 class supabaseApiClient {
 
@@ -13,12 +13,12 @@ class supabaseApiClient {
         return response.data
     }
 
-    async addChild(name, age, sex) {
-        console.log("name, sex, age", name, age, sex)
+    async addChild(name, sex, age) {
+        console.log("name, sex, age", name, sex, age)
         try {
             const { error } = await supabase
                 .from('children')
-                .insert({name, age, sex})
+                .insert({name, sex, age})
         } catch (err) {
             console.log(err)
         }
