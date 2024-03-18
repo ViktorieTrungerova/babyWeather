@@ -13,17 +13,17 @@ class supabaseApiClient {
         return response.data
     }
 
-    async addChild(name, sex, age) {
-        console.log("name, sex, age", name, sex, age)
-        try {
-            const { error } = await supabase
-                .from('children')
-                .insert({name, sex, age})
-        } catch (err) {
-            console.log(err)
-        }
+    async addChild(newChild) {
+        const { error } = await supabase
+            .from('children')
+            .insert(newChild)
+    }
 
-
+    async deleteChild(id) {
+        const { error } = await supabase
+            .from('children')
+            .delete()
+            .eq('id', id)
     }
 }
 

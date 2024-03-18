@@ -1,11 +1,17 @@
 class ClothesDeterminer {
 
     clothes = [
-        {name: 'snowCoat', imageUrl: 'assets/img/snowCoat.png', tempFrom: null, tempTo: null, ageFrom: null, ageTo: null},
-        {name: 'glove', imageUrl: 'assets/img/glove.png', tempFrom: 0, tempTo: 16, ageFrom: 1, ageTo: 5},
-        {name: 'shirt', imageUrl: 'assets/img/shirt.png', tempFrom: 5, tempTo: 10, ageFrom: 1, ageTo: null},
-        {name: 'shorts', imageUrl: 'assets/img/shorts.png', tempFrom: 5, tempTo: 10, ageFrom: 1, ageTo: null},
-        {name: 'skirt', imageUrl: 'assets/img/skirt.png', tempFrom: 0, tempTo: 19, ageFrom: null, ageTo: null},
+        {name: 'glove', imageUrl: 'assets/img/glove.png', tempFrom: null, tempTo: 13, ageFrom: 1, ageTo: null},
+        {name: 'shirt', imageUrl: 'assets/img/shirt.png', tempFrom: 15, tempTo: null, ageFrom: null, ageTo: null},
+        {name: 'shorts', imageUrl: 'assets/img/shorts.png', tempFrom: 20, tempTo: null, ageFrom: 1, ageTo: null},
+        {name: 'skirt', imageUrl: 'assets/img/skirt.png', tempFrom: 20, tempTo: null, ageFrom: 1, ageTo: null},
+
+        {name: 'snow boots', imageUrl: 'assets/img/boots.png', tempFrom: null, tempTo: 10, ageFrom: 1, ageTo: null},
+        {name: 'long shirt', imageUrl: 'assets/img/longShirt.png', tempFrom: null, tempTo: 16, ageFrom: null, ageTo: null},
+        {name: 'singlet', imageUrl: 'assets/img/singlet.png', tempFrom: null, tempTo: 16, ageFrom: null, ageTo: null},
+        {name: 'snowsuit', imageUrl: 'assets/img/snowsuit.png', tempFrom: null, tempTo: 15, ageFrom: null, ageTo: null},
+        {name: 'tights', imageUrl: 'assets/img/tights.png', tempFrom: null, tempTo: 15, ageFrom: null, ageTo: null},
+        {name: 'winter hat', imageUrl: 'assets/img/winterHat.png', tempFrom: null, tempTo: 10, ageFrom: null, ageTo: null},
     ];
 
     getSuitableClothes(temperature, age) {

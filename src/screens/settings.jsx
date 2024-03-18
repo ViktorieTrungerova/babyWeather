@@ -8,7 +8,7 @@ const SettingsScreen = () => {
         <>
             <Header />
             <Container>
-                <h1>Settings</h1>
+                <h1 className="mb-5 mt-5">Add child</h1>
                 <AddChildForm />
             </Container>
 

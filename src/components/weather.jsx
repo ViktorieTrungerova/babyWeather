@@ -1,21 +1,16 @@
 import React, {useState} from 'react'
-import Card from 'react-bootstrap/Card';
 
-const Weather = ({temperature, feelsLike, icon, describe, place, onClickWeatherForecast}) => {
+const Weather = ({temperature, feelsLike, icon, describe, onClickWeatherForecast, timeForecast}) => {
 
-    return <>
-        <Card className='weatherCard'>
-            <Card.Body onClick={onClickWeatherForecast}>
-                <Card.Img variant="top" src={icon} />
-                <Card.Title>{temperature} °C</Card.Title>
-                <Card.Text>
+    return <div className="weather" onClick={onClickWeatherForecast}>
+                <p className="weather__forecastTime">{timeForecast}</p>
+                <img src={icon} />
+                <h1>{temperature} °C</h1>
+                <p>
                     <div>Feels like {feelsLike} °C</div>
                     <div>{describe}</div>
-                    <div>{place}</div>
-                </Card.Text>
-            </Card.Body>
-        </Card>
-    </>
+                </p>
+            </div>
 }
 
 export default Weather;
