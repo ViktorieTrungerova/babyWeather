@@ -72,7 +72,7 @@ function AddChildForm() {
     return (
         <>
             { message && <Message id="message" text={message} variant={variant} /> }
-            <Form onSubmit={handleSubmit} className="addChildForm">
+            <Form onSubmit={handleSubmit} className="add-child-form">
                 <Row className="mb-3">
                     <Form.Group as={Col}>
                         <Form.Label>First name</Form.Label>

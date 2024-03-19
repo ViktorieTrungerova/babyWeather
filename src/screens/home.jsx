@@ -28,12 +28,11 @@ const Home = () => {
         setWeatherForecast(false)
     };
 
-    const handleDelete = async (id) => {
+    const handleDeleteChild = async (id) => {
         await supabaseApi.deleteChild(id);
         location.reload();
     }
 
-    console.log(weather, 'data')
     return (
         <>
             {
@@ -44,7 +43,7 @@ const Home = () => {
                         <Container>
                             <Row>
                                 <Col xs={12}>
-                                    {weatherForecast && <WeatherForecast weatherForecastHourly={weather.hourly.slice(0, 8)} onClickForecast={selectForecast}/>}
+                                    {weatherForecast && <WeatherForecast weatherForecastHourly={weather.hourly.slice(0, 13)} onClickForecast={selectForecast}/>}
                                     <Weather
                                         onClickWeatherForecast={() => (setWeatherForecast(!weatherForecast))}
                                         temperature={Math.round(weather.hourly[selectedWeatherIndex].temp - 275.15)}
@@ -52,7 +51,7 @@ const Home = () => {
                                         feelsLike={Math.round(weather.hourly[selectedWeatherIndex].feels_like - 275.15)}
                                         timeForecast={selectedWeatherIndex > 0 && `Forecast for ${ new Date(weather.hourly[selectedWeatherIndex].dt * 1000).getHours()}:00`}
                                         icon={`https://openweathermap.org/img/wn/${weather.hourly[selectedWeatherIndex].weather[0].icon}@2x.png`}/>
-                                    {selectedWeatherIndex > 0 && <div className="currentWeather" onClick={() => setSelectedWeatherIndex(0)}><img src="assets/img/nounBack.png"/>Back to current weather</div>}
+                                    {selectedWeatherIndex > 0 && <div className="current-weather" onClick={() => setSelectedWeatherIndex(0)}><img src="assets/img/nounBack.png"/>Back to current weather</div>}
                                 </Col>
                             </Row>
                             <Row className="justify-content-between">
@@ -60,8 +59,9 @@ const Home = () => {
                                     const clothes = determinator.getSuitableClothes(
                                         Math.round(weather.hourly[selectedWeatherIndex].temp - 275.15),
                                         child.age,
+                                        child.sex
                                     )
-                                    return <Child id={child.id} key={key} name={child.name} onClickDelete={handleDelete} sex={child.sex} allClothes={clothes} />;
+                                    return <Child id={child.id} key={key} name={child.name} onClickDelete={handleDeleteChild} sex={child.sex} allClothes={clothes} />;
                                 })}
                             </Row>
                         </Container>
