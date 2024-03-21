@@ -8,8 +8,8 @@ const Header = () => {
             <Container>
                 <Row>
                     <Col className="header__wrapper">
-                        <a href="http://localhost:5173" alt="Home"><img src="assets/img/home.png"/>HOME</a>
-                        <a href="http://localhost:5173/settings" alt="Settings"><img src="assets/img/settings.png"/>SETTINGS</a>
+                        <a href="/" alt="Home"><img src="assets/img/home.png"/>HOME</a>
+                        <a href="/settings" alt="Settings"><img src="assets/img/settings.png"/>SETTINGS</a>
                     </Col>
                 </Row>
             </Container>
