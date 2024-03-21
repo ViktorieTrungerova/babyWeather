@@ -14,10 +14,12 @@ class ClothesDeterminer {
         {name: 'snow boots', imageUrl: 'assets/img/boots.png', tempFrom: null, tempTo: 10, ageFrom: 1, ageTo: null, sex: null},
         {name: 'long shirt', imageUrl: 'assets/img/longShirt.png', tempFrom: null, tempTo: 16, ageFrom: null, ageTo: null, sex: null},
         {name: 'singlet', imageUrl: 'assets/img/singlet.png', tempFrom: null, tempTo: 16, ageFrom: null, ageTo: null, sex: null},
-        {name: 'snowsuit', imageUrl: 'assets/img/snowsuit.png', tempFrom: null, tempTo: 15, ageFrom: null, ageTo: null, sex: null},
+        {name: 'snowsuit', imageUrl: 'assets/img/snowsuit.png', tempFrom: null, tempTo: 15, ageFrom: null, ageTo: 1, sex: null},
         {name: 'tights', imageUrl: 'assets/img/tights.png', tempFrom: null, tempTo: 15, ageFrom: null, ageTo: null, sex: null},
         {name: 'winter hat', imageUrl: 'assets/img/winterHat.png', tempFrom: null, tempTo: 10, ageFrom: null, ageTo: null, sex: null},
         {name: 'glove', imageUrl: 'assets/img/glove.png', tempFrom: null, tempTo: 13, ageFrom: 1, ageTo: null, sex: null},
+        {name: 'winter jacket', imageUrl: 'assets/img/winterJacket.png', tempFrom: null, tempTo: 13, ageFrom: 1, ageTo: null, sex: null},
+        {name: 'winter pants', imageUrl: 'assets/img/winterPants.png', tempFrom: null, tempTo: 13, ageFrom: 1, ageTo: null, sex: null},
 
         // autumn, spring
         {name: 'sweater', imageUrl: 'assets/img/sweater.png', tempFrom: 13, tempTo: 17, ageFrom: null, ageTo: null, sex: null},
